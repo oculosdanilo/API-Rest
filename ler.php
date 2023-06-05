@@ -1,16 +1,17 @@
 <?php
-  function realizarLeitura(){
-    
-    $arquivo = "./senhas.txt";
-  
-    $abrir = fopen($arquivo, "r");
+function realizarLeitura()
+{
 
-    $json = fread($abrir, filesize($arquivo));
+  $arquivo = "./senhas.txt";
 
-    fclose($abrir);
-    $resposta = json_decode($json);
+  $abrir = fopen($arquivo, "r");
 
-    return $json;
-  }
+  $json = fread($abrir, filesize($arquivo));
+
+  fclose($abrir);
+  $resposta = json_decode($json);
+
+  return $json;
+}
 
 ?>
