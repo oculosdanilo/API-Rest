@@ -1,0 +1,106 @@
+
+body {
+min-height: 100vh;
+  min-width: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+form, .bloco {
+  background-color: #0f0f0f;
+border-radius: 10px;
+ box-shadow: 0px 30px 125px -5px #000000;
+  margin: top;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bloco {
+  height: 400px;
+  padding: 10px;
+  text-shadow: 2px 2px 5px #2b2b2b;
+  color: white;
+}
+
+input[type=text], input[type=password], input[type=number] {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 3px solid #000000;
+  background-color:#ffffff;
+  box-sizing: border-box;
+  border-radius: 10px;
+
+}
+
+.token {
+  margin-top:60px;
+  font-size: 1.3rem;
+}
+
+h1 {
+ text-shadow: 2px 2px 5px #2b2b2b;
+align-items: center;
+  color: #ffffff;
+  text-align: center;
+  
+}
+
+.titulo {
+   text-shadow: 2px 2px 5px #b0b0b0;
+}
+
+button, .button {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 17px;
+  text-align: center;
+}
+
+button:hover{
+  opacity: 0.8;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+.container {
+  padding: 16px;
+}
+
+b {
+  color: white;
+  text-shadow: 2px 2px 5px #2b2b2b;
+  font-size: 20px;
+}
+
+.emails {
+  margin-top: 100px;
+}
+
+.email {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

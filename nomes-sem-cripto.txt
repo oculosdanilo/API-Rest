@@ -1,0 +1,14 @@
+login = "calopsita@gmail.com" e senha = "fazol"
+
+login = "sara@gmail.com" e senha = 1234
+
+login = "gabriela@gmail.com" e senha = 5432
+
+logintres = "danolo@gmail.com" e senha = bruni
+
+$login = "canila@gmail.com" e senha = silva
+
+
+
+
+
