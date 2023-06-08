@@ -4,9 +4,6 @@ let form = document.querySelector("form");
 btn.addEventListener("click", enviarDados);
 
 function enviarDados(event) {
-  //
-  event.preventDefault();
-
   // selecionando objetos html
   let inputNome = form.nomeUsuario;
   let inputEmail = form.emailUsuario;
@@ -17,17 +14,23 @@ function enviarDados(event) {
   let email = inputEmail.value;
   let senha = inputSenha.value;
 
-  let usuario = {
-    nome: nome,
-    email: email,
-    senha: senha,
-  };
-  form.reset();
-  incluirDados(usuario);
+  if (nome != "" && email != "" && senha != "") {
+    //
+    event.preventDefault();
+
+    let usuario = {
+      nome: nome,
+      email: email,
+      senha: senha,
+    };
+    form.reset();
+    incluirDados(usuario);
+  }
 }
 
 function incluirDados(usuario) {
-  let url = "http://localhost/API-Rest/POST/controller/POST_incluirUsuario.php";
+  let url =
+    "https://localhost/API-Rest/POST/controller/POST_incluirUsuario.php";
   //enviando a requisição
   fetch(url, {
     method: "POST",
