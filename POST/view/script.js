@@ -30,6 +30,7 @@ function enviarDados(event) {
 
 function incluirDados(usuario) {
   let url = "../controller/POST_incluirUsuario.php";
+
   //enviando a requisição
   fetch(url, {
     method: "POST",
