@@ -30,7 +30,7 @@ function enviarDados(event) {
 
 function incluirDados(usuario) {
   let url =
-    "https://localhost/API-Rest/POST/controller/POST_incluirUsuario.php";
+    "http://localhost/API-Rest/POST/controller/POST_incluirUsuario.php";
   //enviando a requisição
   fetch(url, {
     method: "POST",
