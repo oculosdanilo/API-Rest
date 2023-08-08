@@ -2,7 +2,7 @@
 
 function realizarLeitura(){
 
-$arquivo = "../senhas.txt";
+$arquivo = "./senhas.txt";
 
 $abrir = fopen($arquivo,"r");
 
@@ -17,7 +17,15 @@ return $json;
 }
 
 $usuarios = realizarLeitura();
-$usuarios=json_decode($usuarios,true);
+    $usuarios=json_decode($usuarios,true);
+
+
+function maximo(){
+    $usuarios = realizarLeitura();
+    $usuarios=json_decode($usuarios,true);
+    return count($usuarios) - 1;
+   
+}
 
 //print json_encode($usuarios);
 
@@ -35,7 +43,7 @@ $usuarios=json_decode($usuarios,true);
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel='stylesheet' type='text/css' href='../style.css'>
+    <link rel='stylesheet' type='text/css' href='../../style.css'>
 
     <title>Usuario</title>
 
@@ -48,18 +56,23 @@ $usuarios=json_decode($usuarios,true);
 <h1 class="titulo">Usuário no Sistema:</h1>
     <form action="" method="get">
         <div class="email" id="email">
-            ID: <input type="number" name="id" id="id" min="0" max="4" required>
-            <input type="submit" value="Enviar" name="btn" class="button">
+            ID: <input type="number" name="id" id="id" min="0" max="<?php echo maximo();?>" required>
+            <p>ID de 0 a <?php echo maximo();?></p>
+            <input type="submit" value="Enviar" name="btn" class="btn">
             <?php  
+
             
             if (isset($_GET['btn'])) {
                 $id = $_GET['id'];
-
                 if(count($usuarios)){
                     $usuario = $usuarios[$id]['email'];
                     $logins = base64_decode($usuario);
                 echo "<h2 class='titulo'>Usuário: <h2>";
                 echo $logins;
+                }
+
+                elseif ($logins === null) {
+                    echo "<h2 class='titulo'> Não existe esse usuario <h2>";
                 }
             } // fecha if btn
             

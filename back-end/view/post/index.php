@@ -3,7 +3,7 @@
 function realizarLeitura()
 {
 
-    $arquivo = "../../senhas.txt";
+    $arquivo = "../../controller/senhas.txt";
 
     $abrir = fopen($arquivo, "r");
 
@@ -32,6 +32,15 @@ $usuarios = json_decode($usuarios, true);
 </head>
 
 <body>
+<?php
+
+$leitura = realizarLeitura();
+   $leitura = json_decode($leitura);
+   $ultimoUsuario = end($leitura);
+   print_r($ultimoUsuario->id);
+
+?>
+    <div class="blocao">
 
     <form action="">
         <h1 class="titulo">Cadastro</h1>
@@ -48,10 +57,9 @@ $usuarios = json_decode($usuarios, true);
         <button>ENVIAR</button>
     </form>
 
-    <div class="emails" id="emails">
-
-        <?php
-        for ($i = 0; $i < count($usuarios); $i++)
+<div class="emails" id="emails">
+  <h1 class="titulo">Emails:</h1></br>
+        <!-- for ($i = 0; $i < count($usuarios); $i++)
         {
 
             $usuario = $usuarios[$i]['email'];
@@ -59,13 +67,11 @@ $usuarios = json_decode($usuarios, true);
 
             echo $logins;
             echo "<br>";
-        }
-
-        ?>
-    </div>
-
-    <script src="./script.js"></script>
-
+        } -->
+</div>
+</div>
+<script src="./script.js"></script>
+<script></script>
 </body>
 
 </html>

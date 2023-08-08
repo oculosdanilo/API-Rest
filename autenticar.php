@@ -1,5 +1,5 @@
 <?php
-
+ session_start();
 function token($tamanho = 40)
 {
   $string = md5(rand());
@@ -17,7 +17,7 @@ $token = token();
 </form>
 <?php
 
-$usuarios = file_get_contents('senhas.txt');
+$usuarios = file_get_contents('./back-end/controller/senhas.txt');
 $usuarios = json_decode($usuarios, true);
 
 $email = $_POST['email'];
@@ -30,7 +30,8 @@ foreach ($usuarios as $usuario)
 {
   if ($usuario['email'] == $novoEmail && $usuario['senha'] == $novaSenha)
   {
-
+   
+    $_SESSION['email'] = $email;
     echo "<script>document.getElementById('myForm').submit();</script>";
     exit();
 

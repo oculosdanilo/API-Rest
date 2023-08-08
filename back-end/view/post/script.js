@@ -29,7 +29,7 @@ function enviarDados(event) {
 }
 
 function incluirDados(usuario) {
-  let url = "../controller/POST_incluirUsuario.php";
+  let url = "../../controller/post-usuario.php";
 
   //enviando a requisição
   fetch(url, {
@@ -46,4 +46,9 @@ function incluirDados(usuario) {
     .then(function (response) {
       console.log(response);
     });
+    
+    alert("Obrigada por se cadastrar!!!");
+    location.reload();
 }
+
+function 

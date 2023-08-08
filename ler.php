@@ -2,7 +2,7 @@
 function realizarLeitura()
 {
 
-  $arquivo = "./senhas.txt";
+  $arquivo = "./back-end/controller/senhas.txt";
 
   $abrir = fopen($arquivo, "r");
 
